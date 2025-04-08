@@ -2,6 +2,9 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    alias(libs.plugins.serialization)
+
+
 }
 
 android {
@@ -9,7 +12,7 @@ android {
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.iago.practicando"
+        applicationId = "com.example.trivialapp"
         minSdk = 24
         targetSdk = 35
         versionCode = 1
@@ -56,4 +59,18 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+
+    // MVVM y LiveData
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.7")
+    implementation("androidx.compose.runtime:runtime-livedata:1.7.8")
+
+    // Constraint Layout
+    implementation ("androidx.constraintlayout:constraintlayout:2.2.1")
+    implementation ("androidx.constraintlayout:constraintlayout-compose:1.1.1")
+
+    // Implementación navegación
+    implementation(libs.navigation.compose)
+    implementation(libs.kotlinx.serialization.json)
 }
+
